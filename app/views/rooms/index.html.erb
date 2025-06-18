@@ -1,0 +1,12 @@
+<h1 class="text-2xl font-bold mb-4">Available Chat Rooms</h1>
+
+<ul>
+  <% @rooms.each do |room| %>
+    <li class="mb-2">
+      <%= link_to room.name, room_path(room), class: "text-blue-600 underline" %>
+    </li>
+  <% end %>
+
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
+</ul>

@@ -1,0 +1,11 @@
+<turbo-stream target="messages" action="append">
+  <template>
+
+<div class="mb-2">
+  <strong><%= message.user.username %></strong>:
+  <%= message.content %>
+  <span class="text-gray-500 text-sm"><%= message.created_at.strftime("%H:%M") %></span>
+</div>
+
+  </template>
+</turbo-stream>

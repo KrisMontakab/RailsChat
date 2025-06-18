@@ -1,0 +1,13 @@
+<h1><%= @room.name %></h1>
+
+<%# This is now 'listening for turbo stream updates'%>
+<%= turbo_stream_from @room %> 
+
+<div id="messages" data-controller="chat" style="overflow-y: auto; max-height: 400px;">
+  <%= render @messages %>
+</div>
+
+<%= form_with(model: [@room, @message]) do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Send" %>
+<% end %>

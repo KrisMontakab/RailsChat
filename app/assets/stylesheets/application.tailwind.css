@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/*Added these to test out tailwinds */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
