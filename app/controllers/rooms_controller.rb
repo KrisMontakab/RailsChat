@@ -12,6 +12,9 @@ before_action :authenticate_user!
     #Sets the room to match the id
   @room = Room.find(params[:id])
 
+  #Only renders one room as a 'partial'
+  #render partial: "rooms/room", locals: { room: @room }
+
   #Shows the messages alongside the user
   @messages = @room.messages.includes(:user)
 

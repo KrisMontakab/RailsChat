@@ -1,12 +1,25 @@
-<h1 class="text-2xl font-bold mb-4">Available Chat Rooms</h1>
+<h1 class="text-2xl font-bold mb-4">Choose A Room</h1>
 
-<ul>
-  <% @rooms.each do |room| %>
-    <li class="mb-2">
-      <%= link_to room.name, room_path(room), class: "text-blue-600 underline" %>
+<%# Wrapped in  a turbo Frame - Commented out as contained bugs
+<turbo-frame id="room_details">
+  <ul>
+%>
+
+    <% @rooms.each do |room| %>
+      <li class="mb-2">
+
+        <%= link_to room.name, room_path(room), class: "text-blue-600 underline" %>
+
+              <%# Turbo frame givent the name 'room_turbo, commented out as it contained bugs%>
+       <%#, data: { turbo_frame: "room_turbo" }, class: "text-blue-600 underline" %>
+      </li>
+    <% end %>
+
+    <li>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </li>
-  <% end %>
 
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-</ul>
+<%#
+  </ul>
+</turbo-frame>
+%>
